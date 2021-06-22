@@ -1,0 +1,139 @@
+.prod-slide-container{
+	.swiper-slide{
+		overflow: hidden; 
+	}
+}
+.prod-slide-wrap{
+	height: 260px;
+	padding: 42px 30px; 
+	border-radius: 20px;  
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat; 
+	@media #{$lg_device}{
+		height: 220px;
+	}@media #{$md_device}{
+		height: 123px;
+		padding:25px 25px;
+	}
+	h3{
+		font-size: 40px;
+		line-height: 56px; 
+		@media #{$lg_device}{
+			font-size: 30px;
+			line-height: 40px; 
+		}
+		@media #{$md_device}{
+			font-size: 18px;
+			line-height: 30px;  
+		}
+	}
+	.text-content{
+		max-width: 499px;
+	}
+}
+.prod-slide-wrapper{
+	position: relative;
+	padding-right: 27px; 
+@media #{$md_device}{
+		padding-right: 15px;  
+		}
+	.prod-slid-nav{
+		position: absolute;
+		top: 50%;
+		right: 0;
+		@include transform(translateY(-50%)); 
+	}
+}
+.prod-slid-nav{
+	.swiper-pagination-bullet{
+		display: block; 
+		height: 16px;
+		width: 16px; 
+		margin: 10px 0; 
+		background-color: #E6E9EB; 
+		opacity: 1; 
+		@media #{$md_device}{
+					height: 8px;
+		width: 8px;  
+		}
+	}
+	.swiper-pagination-bullet-active{
+		background-color: #419A1F; 
+	}
+}
+.cat-slide-scrollbar{
+	margin-top: 10px;  
+	.swiper-scrollbar-drag{
+		height:8px; 
+		background-color: #E8E8E8; 
+	}
+}
+.cat-btn{
+	display: flex; 
+	align-items: center; 
+	background: transparent;
+	text-decoration: none !important;
+	color: #4AB421;
+	font-size: 18px;
+	font-weight: 600; 
+	text-align: center; 
+	padding: 10px 20px;
+	border-radius: 10px;
+	position: relative;
+	z-index: 2; 
+	@include transition(all 0.25s); 
+	justify-content: center; 
+	&::before{
+		content: "";
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background: #419A1F;
+		z-index: -2;
+		border-radius: 10px; 
+		@include transform(scale(0.95));  
+		@include transition(cubic-bezier(.22,.61,.36,1) 0.25s); 
+		opacity: 0; 
+	}
+	i{
+		color: #283646; 
+		margin-right: 10px; 
+	}
+	&:hover{
+		color: #fff; 
+		&::before{ 
+			opacity: 1;
+			@include transform(scale(1));
+		}
+		i{
+			animation: rubberBand 0.25s; 
+		}
+	}
+}
+.cat-slide-wrapper{
+	position: relative;
+}
+.cat-slide-nav-wrap{
+	button{
+		background-color: transparent;
+		border-color: transparent;
+		color: #000;
+		position: absolute;
+		top: 9px; 
+		z-index: 20; 
+	}
+	.next{
+		right: -30px;  
+		@media #{$md_device}{
+			right: -4px;
+		}
+	}.prev{  
+		left: -30px;
+		@media #{$md_device}{
+			left: -4px; 
+		}
+	}
+}
